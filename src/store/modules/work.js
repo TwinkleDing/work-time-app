@@ -50,10 +50,8 @@ const work = {
 			}
 			let aTime = parseInt(a.slice(0, 2)) * 60 + parseInt(a.slice(3));
 			let bTime = parseInt(b.slice(0, 2)) * 60 + parseInt(b.slice(3));
-			let time = bTime - aTime - j;
-			console.log(j)
-			last.hasWork = time;
-			console.log(time)
+			// 获取工作时长的分钟数
+			last.hasWork = bTime - aTime - j;
 			// last.waitWork = 
 			state.clock[state.clock.length - 1] = last;
 			setStorage('clock', state.clock);
@@ -71,9 +69,9 @@ const work = {
 				resolve();
 			})
 		},
-		ClockOut({commit}, clockIn) {
+		ClockOut({commit}, clockOut) {
 			return new Promise((resolve) => {
-				commit('CLOCK_OUT', clockIn);
+				commit('CLOCK_OUT', clockOut);
 				resolve();
 			})
 		},
