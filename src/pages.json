@@ -1,16 +1,38 @@
 {
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+	"pages": [
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "工时计算"
+			}
+		},
+		{
+			"path": "pages/index/info",
+			"style": {
+				"navigationBarTitleText": "工时计算"
 			}
 		}
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"backgroundColor": "#F8F8F8",
+		"navigationStyle": "custom"
 	}
+	// "tabBar": {
+	// 	"color": "#444444",
+	// 	"selectedColor": "#007aff",
+	// 	"backgroundColor": "#ffffff",
+	// 	"list": [{
+	// 		"pagePath": "pages/index/index",
+	// 		"text": "打卡",
+	// 		"iconPath": "static/logo.png",
+	// 		"selectedIconPath": "static/logo.png"
+	// 	}, {
+	// 		"pagePath": "pages/index/info",
+	// 		"text": "详情",
+	// 		"iconPath": "static/logo.png",
+	// 		"selectedIconPath": "static/logo.png"
+	// 	}]
+	// }
 }
