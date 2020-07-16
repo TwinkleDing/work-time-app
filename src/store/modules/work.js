@@ -27,7 +27,7 @@ const work = {
 			// 获取最新的下班打卡时间
 			let b = data.slice(11);
 			// 设置不计工时时间
-			let j;
+			let j = 0;
 			// 设置规定上班时间
 			let ruleIn = '08:00';
 			// 设置规定下班时间
@@ -51,7 +51,9 @@ const work = {
 			let aTime = parseInt(a.slice(0, 2)) * 60 + parseInt(a.slice(3));
 			let bTime = parseInt(b.slice(0, 2)) * 60 + parseInt(b.slice(3));
 			let time = bTime - aTime - j;
+			console.log(j)
 			last.hasWork = time;
+			console.log(time)
 			// last.waitWork = 
 			state.clock[state.clock.length - 1] = last;
 			setStorage('clock', state.clock);
