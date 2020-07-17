@@ -18,14 +18,15 @@ const work = {
 			// 获取最后一次打卡信息
 			let last = state.clock[state.clock.length - 1];
 			// 设置下班打卡时间或者更新
-			last.clockOut = data;
+			last.clockIn = '2020-07-17 08:48';
+			last.clockOut = '2020-07-17 17:38';
 			// 设置为已下班状态
 			state.clockOr = 'worked';
 			/* 工时计算 */
 			// 获取最后一次的上班打卡时间
 			let a = last.clockIn.slice(11);
 			// 获取最新的下班打卡时间
-			let b = data.slice(11);
+			let b = last.clockOut.slice(11);
 			// 设置不计工时时间
 			let j = 0;
 			// 设置规定上班时间
@@ -34,11 +35,11 @@ const work = {
 			let ruleOut = '17:30';
 			// 判断如果早于8点则从8点开始算
 			if(parseInt(a.slice(0, 2)) < 8) {
-				a = `${last.clockIn.slice(0, 10)} ruleIn`;
+				a = ruleIn;
 			}
 			// 判断是不是在17.30-18点之间打的卡，是的话设置下班打卡时间结束为17：30
-			if(parseInt(b.slice(0, 2)) === 17 && parseInt(b.slice(3) > 30)) {
-				b = `${last.clockIn.slice(0, 10)} ruleOut`;
+			if(parseInt(b.slice(0, 2)) === 17 && parseInt(b.slice(3)) > 30) {
+				b = ruleOut;
 			}
 			// 判断是不是在上午打的上班，下午打的下班，-90
 			if(parseInt(a.slice(0, 2)) < 12 && parseInt(b.slice(0, 2)) > 13) {
