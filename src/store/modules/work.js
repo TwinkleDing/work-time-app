@@ -18,8 +18,7 @@ const work = {
 			// 获取最后一次打卡信息
 			let last = state.clock[state.clock.length - 1];
 			// 设置下班打卡时间或者更新
-			last.clockIn = '2020-07-17 08:48';
-			last.clockOut = '2020-07-17 17:38';
+			last.clockOut = data;
 			// 设置为已下班状态
 			state.clockOr = 'worked';
 			/* 工时计算 */
